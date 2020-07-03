@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+  <title>Connect 4</title>
+  <meta charset=“UTF-8”>
+  <link href="connect4.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<form action="">
+  <h1>Connect 4</h1>
+  <h2>Player turn: player 1</h2>
+  <label for="board-width">Enter your board dimensions: </label>
+  <input type="number" id="board-height" placeholder="Height...">
+  <input type="number" id="board-width" placeholder="Width...">
+  <input type="submit">
+  <button id="restart">Restart Game</button>
+</form>
+
+<div id="game">
+  <table id="board"></table>
+</div>
+
+
+<script src="connect4.js"></script>
+
+</body>
+</html>

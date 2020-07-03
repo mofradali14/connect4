@@ -1,0 +1,109 @@
+/* game board table */
+body {
+	background-color: rgb(105, 168, 168);
+}
+
+#board td {
+	width: 50px;
+	height: 50px;
+	border: solid 1px #666;
+}
+
+#board {
+	margin: auto;
+	margin-top: 20px;
+	border: 3px solid rgb(0, 66, 128);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+	/* TODO: make into circles */
+	margin: 3px;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	border-style: ridge;
+	animation-name: drop;
+	animation-duration: 1s;
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+	border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+	background-color: gold;
+}
+
+.p1 {
+	background-color: red;
+	border-color: rgb(212, 19, 19);
+}
+
+.p2 {
+	background-color: blue;
+	border-color: rgb(19, 19, 212);
+}
+
+input {
+	position: relative;
+	font-size: 1em;
+	background: linear-gradient(21deg, #10abff8f, #1beabd83);
+	padding: 3px;
+	display: inline-block;
+	border-radius: 10px;
+	color: white;
+}
+
+label {
+	color: rgb(216, 230, 236);
+	font-size: 1.4em;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	color: whitesmoke;
+	text-decoration: transparent;
+	letter-spacing: 4px;
+	font-size: 56px;
+	text-shadow: 2px 2px 10px #000000;
+}
+
+form {
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	font-family: 'MuseoModerno', cursive;
+}
+
+h2 {
+	color: red;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 4px #ffffff;
+}
+
+.p2-turn {
+	color: blue;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 4px #ffffff;
+}
+
+#restart {
+	position: relative;
+	font-size: 1em;
+	background: linear-gradient(21deg, #f35c5c8f, #ff000083);
+	padding: 3px;
+	display: inline-block;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+}
