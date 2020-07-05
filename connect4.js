@@ -4,22 +4,18 @@
  * column until a player gets four-in-a-row (horiz, vert, or diag) or until
  * board fills (tie)
  */
-// let width;
-// let height;
 
-// let width = document.querySelector('#board-width').value;
-// let height = document.querySelector('#board-height').value;
 let form = document.querySelector('form');
 let width = 7;
 let height = 7;
 
+// Form to set the board dimensions
 form.addEventListener('submit', function(e) {
 	e.preventDefault();
 	const htmlBoard = document.querySelector('#board');
 	htmlBoard.innerHTML = '';
 	width = document.querySelector('#board-width').value;
 	height = document.querySelector('#board-height').value;
-	// return width, height;
 
 	makeBoard();
 	makeHtmlBoard();
@@ -32,9 +28,6 @@ restart.addEventListener('click', function(e) {
 	makeBoard();
 	makeHtmlBoard();
 });
-
-// let width = 7;
-// let height = document.querySelector('#board-height').value;
 
 let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
@@ -64,10 +57,12 @@ const makeHtmlBoard = () => {
 	const htmlBoard = document.querySelector('#board');
 	// TODO: add comment for this code
 
+	//
 	let top = document.createElement('tr');
 	top.setAttribute('id', 'column-top');
 	top.addEventListener('click', handleClick);
 
+	// Creates top row and adds td cells for the number of the width
 	for (let x = 0; x < width; x++) {
 		let headCell = document.createElement('td');
 		headCell.setAttribute('id', x);
@@ -75,7 +70,7 @@ const makeHtmlBoard = () => {
 	}
 	htmlBoard.append(top);
 
-	// TODO: add comment for this code
+	// Creates rows for the number of the height and adds td cells
 	for (let y = 0; y < height; y++) {
 		const row = document.createElement('tr');
 		for (let x = 0; x < width; x++) {
@@ -86,9 +81,7 @@ const makeHtmlBoard = () => {
 		htmlBoard.append(row);
 	}
 };
-
 /** findSpotForCol: given column x, return top empty y (null if filled) */
-
 function findSpotForCol(x) {
 	// TODO: write the real version of this, rather than always returning 0
 	// Adds piece to end of array column (height - 1 => 0 due to index rules)
@@ -99,9 +92,7 @@ function findSpotForCol(x) {
 	}
 	return null;
 }
-
 /** placeInTable: update DOM to place piece into HTML table of board */
-
 function placeInTable(y, x) {
 	// TODO: make a div and insert into correct table cell
 	let piece = document.createElement('div');
@@ -160,7 +151,7 @@ function handleClick(evt) {
 	// 	return endGame('Tie!');
 	// }
 	if (board.every((row) => row.every((cell) => cell))) {
-		endGame('Tie game');
+		return endGame('Tie game');
 	}
 
 	// switch players
